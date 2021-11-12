@@ -10,13 +10,13 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInside && Input.GetButtonDown("Interact"))
+        if (isInside && InputManager.GetInteract())
         {
             Interact();
         }
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
         Debug.Log("Interacted");
     }
