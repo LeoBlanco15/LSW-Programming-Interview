@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = " chest", menuName = "Chest")]
+[CreateAssetMenu(fileName = " chest", menuName = "Inventory/Chest")]
 public class ChestObject : ScriptableObject
 {
     public Sprite torso;

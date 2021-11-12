@@ -318,6 +318,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &21081487 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212000013804914738, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
+  m_PrefabInstance: {fileID: 1059498024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &42008097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1146,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 298733574}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2129129434}
+        m_TargetAssemblyTypeName: MainCharacterChothes, Assembly-CSharp
+        m_MethodName: UpdateChest
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &298733574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,8 +2280,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2129129435}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+      - m_Target: {fileID: 2129129434}
+        m_TargetAssemblyTypeName: MainCharacterChothes, Assembly-CSharp
         m_MethodName: UpdateFace
         m_Mode: 6
         m_Arguments:
@@ -2983,6 +3000,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &697031982 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212000012742084602, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
+  m_PrefabInstance: {fileID: 1059498024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &706314309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,6 +3124,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &732195190 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212000012496812036, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
+  m_PrefabInstance: {fileID: 1059498024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &753137659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,7 +3211,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 753137662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2129129434}
+        m_TargetAssemblyTypeName: MainCharacterChothes, Assembly-CSharp
+        m_MethodName: UpdateLegs
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &753137662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3888,8 +3927,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2129129435}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+      - m_Target: {fileID: 2129129434}
+        m_TargetAssemblyTypeName: MainCharacterChothes, Assembly-CSharp
         m_MethodName: UpdateFace
         m_Mode: 6
         m_Arguments:
@@ -4619,6 +4658,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010913707298, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000011064486634, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4635,7 +4678,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011833459350, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000012627692334, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012794074092, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -4968,7 +5019,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1169983877}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2129129434}
+        m_TargetAssemblyTypeName: MainCharacterChothes, Assembly-CSharp
+        m_MethodName: UpdateChest
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1169983877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5184,8 +5247,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2129129435}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+      - m_Target: {fileID: 2129129434}
+        m_TargetAssemblyTypeName: MainCharacterChothes, Assembly-CSharp
         m_MethodName: UpdateHood
         m_Mode: 6
         m_Arguments:
@@ -5757,6 +5820,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1369808687 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212000012642032246, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
+  m_PrefabInstance: {fileID: 1059498024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1370982747
 GameObject:
   m_ObjectHideFlags: 0
@@ -5918,6 +5986,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1412070517 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212000013957669324, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}
+  m_PrefabInstance: {fileID: 1059498024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1413491493
 GameObject:
   m_ObjectHideFlags: 0
@@ -7645,8 +7718,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2129129435}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+      - m_Target: {fileID: 2129129434}
+        m_TargetAssemblyTypeName: MainCharacterChothes, Assembly-CSharp
         m_MethodName: UpdateHood
         m_Mode: 6
         m_Arguments:
@@ -8491,6 +8564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835349161}
   - component: {fileID: 1835349160}
+  - component: {fileID: 1835349162}
   m_Layer: 0
   m_Name: CharacterObjectsHolder
   m_TagString: Untagged
@@ -8516,7 +8590,7 @@ MonoBehaviour:
   shoulderR: {fileID: 1220514517}
   elbowL: {fileID: 364067651}
   elbowR: {fileID: 1725024655}
-  wristL: {fileID: 364067651}
+  wristL: {fileID: 732195190}
   wristR: {fileID: 272441869}
 --- !u!4 &1835349161
 Transform:
@@ -8533,6 +8607,22 @@ Transform:
   m_Father: {fileID: 2129129430}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835349162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835349159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170f7c87b92f750469e00812cc79cf1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legL: {fileID: 1412070517}
+  legR: {fileID: 21081487}
+  bootL: {fileID: 697031982}
+  bootR: {fileID: 1369808687}
 --- !u!1 &1849254123
 GameObject:
   m_ObjectHideFlags: 0
@@ -8615,7 +8705,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1849254126}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2129129434}
+        m_TargetAssemblyTypeName: MainCharacterChothes, Assembly-CSharp
+        m_MethodName: UpdateLegs
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1849254126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9658,6 +9760,7 @@ MonoBehaviour:
   hood: {fileID: 1681231181}
   face: {fileID: 1248412955}
   chest: {fileID: 1835349160}
+  legs: {fileID: 1835349162}
 --- !u!114 &2129129435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9670,6 +9773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6c2d32d4a991c419948e4f328a6f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 1857979567}
   hoods:
   - {fileID: 21300000, guid: f7e7bed775fff8347b9e53c67e20875f, type: 3}
   - {fileID: 21300000, guid: ae2d3e3bacfacde4981510b116293dba, type: 3}
@@ -9683,3 +9787,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7db7af78e8f9c45418a407bdd7958560, type: 3}
   chests:
   - {fileID: 11400000, guid: 18491eeb5cc46ed4899941baaf12170e, type: 2}
+  - {fileID: 11400000, guid: a55e384c04d11394a81c6fb0b173a731, type: 2}
+  - {fileID: 11400000, guid: b20b30f34195ff444a933d8046072731, type: 2}
+  - {fileID: 11400000, guid: 0db490477dad15048b7e09a161a66fdd, type: 2}
+  - {fileID: 11400000, guid: 6edd845c75dac7b4c82b859b5ed79627, type: 2}
+  - {fileID: 11400000, guid: abad4518918861f40a44dfc2c7d198f9, type: 2}
+  legs:
+  - {fileID: 11400000, guid: a60c3bd9546f0b44fb8b22ff26dc1453, type: 2}
+  - {fileID: 11400000, guid: 3fe5c8785d101bd48a058187e85aa729, type: 2}
+  - {fileID: 11400000, guid: c707b8951f5710d41a6f48fba1787bdb, type: 2}

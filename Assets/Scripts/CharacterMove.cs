@@ -23,10 +23,18 @@ public class CharacterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!InputManager.isPaused)
+        {
         //player input goes here
         movement.x = InputManager.GetHorizontal();
         movement.y = InputManager.GetVertical();
 
+        }
+        else
+        {
+            movement.x = 0;
+            movement.y = 0;
+        }
         Animate();
     }
     private void FixedUpdate()
