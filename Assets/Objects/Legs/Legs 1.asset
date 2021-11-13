@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94602516019d0a34d8dd5a61d36198c6, type: 3}
   m_Name: Legs 1
   m_EditorClassIdentifier: 
+  type: 3
+  logo: {fileID: 21300000, guid: 6fa8902135d83ff49a376c05761b61d4, type: 3}
+  cost: 5
   legL: {fileID: 21300000, guid: 40e550cd3b539f14eb98d42b6769b592, type: 3}
   legR: {fileID: 21300000, guid: 7b78357522a34d64bb8775b962b0deb0, type: 3}
   bootL: {fileID: 21300000, guid: 6fa8902135d83ff49a376c05761b61d4, type: 3}

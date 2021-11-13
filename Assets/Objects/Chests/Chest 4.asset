@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c9b161b8abc224ba54fc3346aeb3e0, type: 3}
   m_Name: Chest 4
   m_EditorClassIdentifier: 
+  type: 2
+  logo: {fileID: 21300000, guid: 3d9056df586b6024fbc5b9fee2433eef, type: 3}
+  cost: 5
   torso: {fileID: 21300000, guid: 3d9056df586b6024fbc5b9fee2433eef, type: 3}
   pelvis: {fileID: 21300000, guid: 4807dc8cba98f89409729f6aac2945a7, type: 3}
   shoulderL: {fileID: 21300000, guid: 7c0d0c89b736eb54cac31e27a02a92e5, type: 3}
