@@ -64,15 +64,31 @@ public class Inventory : MonoBehaviour
         switch (item.type)
         {
             case ItemSlot.Hood:
+                if (showedItems != itemList)
+                {
+                    showedItems.Add(HoodObject.CreateItem((HoodObject)item));
+                }
                 itemList.Add(HoodObject.CreateItem((HoodObject)item));
                 break;
             case ItemSlot.Face:
+                if (showedItems != itemList)
+                {
+                    showedItems.Add(HoodObject.CreateItem((HoodObject)item));
+                }
                 itemList.Add(FaceObject.CreateItem((FaceObject)item));
                 break;
             case ItemSlot.Chest:
+                if (showedItems != itemList)
+                {
+                    showedItems.Add(HoodObject.CreateItem((HoodObject)item));
+                }
                 itemList.Add(ChestObject.CreateItem((ChestObject)item));
                 break;
             case ItemSlot.Leg:
+                if (showedItems != itemList)
+                {
+                    showedItems.Add(HoodObject.CreateItem((HoodObject)item));
+                }
                 itemList.Add(LegsObject.CreateItem((LegsObject)item));
                 break;
             default:
@@ -147,6 +163,10 @@ public class Inventory : MonoBehaviour
     }
     public void RemoveItem(Item item)
     {
+        if (showedItems != itemList)
+        {
+            showedItems.Remove(item);
+        }
         itemList.Remove(item);
         inventoryChange.Invoke();
     }
