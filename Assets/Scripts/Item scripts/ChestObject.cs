@@ -15,7 +15,7 @@ public class ChestObject : Item
     public Sprite wristR;
 
     
-    public static ChestObject CreateChest(Chest chest, int auxCost)
+    public static ChestObject CreateItem(Chest chest, int auxCost)
     {
         ChestObject auxChest = ScriptableObject.CreateInstance<ChestObject>();
 
@@ -33,6 +33,25 @@ public class ChestObject : Item
         auxChest.logo = auxChest.torso;
 
         auxChest.Equiped = true;
+
+        return auxChest;
+    }
+    public static ChestObject CreateItem(ChestObject item)
+    {
+        ChestObject auxChest = CreateInstance<ChestObject>();
+
+        auxChest.torso = item.torso;
+        auxChest.pelvis = item.pelvis;
+        auxChest.shoulderL = item.shoulderL;
+        auxChest.shoulderR = item.shoulderR;
+        auxChest.elbowL = item.elbowL;
+        auxChest.elbowR = item.elbowR;
+        auxChest.wristL = item.wristL;
+        auxChest.wristR = item.wristR;
+
+        auxChest.cost = item.cost;
+        auxChest.type = ItemSlot.Chest;
+        auxChest.logo = auxChest.torso;
 
         return auxChest;
     }

@@ -17,10 +17,10 @@ public class MainCharacterChothes : MonoBehaviour
     public Legs legs;
     void Start()
     {
-        Inventory.instance.itemList.Add(HoodObject.CreateHood(hood, 5));
-        Inventory.instance.itemList.Add(FaceObject.CreateFace(face, 5));
-        Inventory.instance.itemList.Add(ChestObject.CreateChest(chest, 5));
-        Inventory.instance.itemList.Add(LegsObject.CreateLeg(legs, 5));
+        Inventory.instance.itemList.Add(HoodObject.CreateItem(hood, 5));
+        Inventory.instance.itemList.Add(FaceObject.CreateItem(face, 5));
+        Inventory.instance.itemList.Add(ChestObject.CreateItem(chest, 5));
+        Inventory.instance.itemList.Add(LegsObject.CreateItem(legs, 5));
         Inventory.instance.inventoryChange.Invoke();
     }
 

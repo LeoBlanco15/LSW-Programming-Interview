@@ -5,6 +5,7 @@ using UnityEngine;
 public static class InputManager
 {
     public static bool isPaused;
+    public static bool shopOpened;
 
     public static float GetVertical()
     {

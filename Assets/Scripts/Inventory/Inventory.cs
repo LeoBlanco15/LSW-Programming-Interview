@@ -16,13 +16,31 @@ public class Inventory : MonoBehaviour
 
     public delegate void OnInventoryChange();
     public OnInventoryChange inventoryChange;
+    private List<Item> showedItems;
 
     private int gold;
+    
+    public int Gold
+    {
+        get
+        {
+            return gold;
+        }
+    }
+    public List<Item> ShowedItems
+    {
+        get
+        {
+            return showedItems;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         ToggleInventory(false);
         gold = 100;
+        FilterList("All");
     }
 
     private void Update()
@@ -31,7 +49,7 @@ public class Inventory : MonoBehaviour
         {
             ToggleInventory(true);
         }
-        else if (InputManager.isPaused && InputManager.GetInventory())
+        else if (InputManager.isPaused && InputManager.GetInventory() && !InputManager.shopOpened)
         {
             ToggleInventory(false);
         }
@@ -42,12 +60,77 @@ public class Inventory : MonoBehaviour
     /// <param name="item"></param>
     public void AddItem(Item item)
     {
-        itemList.Add(item);
+        //itemList.Add(item);
+        switch (item.type)
+        {
+            case ItemSlot.Hood:
+                itemList.Add(HoodObject.CreateItem((HoodObject)item));
+                break;
+            case ItemSlot.Face:
+                itemList.Add(FaceObject.CreateItem((FaceObject)item));
+                break;
+            case ItemSlot.Chest:
+                itemList.Add(ChestObject.CreateItem((ChestObject)item));
+                break;
+            case ItemSlot.Leg:
+                itemList.Add(LegsObject.CreateItem((LegsObject)item));
+                break;
+            default:
+                break;
+        }
         inventoryChange.Invoke();
+    }
+    //public void FilterList()
+    //{
+    //    showedItems = itemList;
+    //    inventoryChange.Invoke();
+    //}
+    public void FilterList(string itemSlot)
+    {
+        if (itemSlot == "All")
+        {
+            showedItems = itemList;
+        }
+        else
+        {
+        showedItems = Filter(itemSlot);
+        }
+        inventoryChange.Invoke();
+    }
+    private List<Item> Filter(string itemSlot)
+    {
+        List<Item> returnList = new List<Item>();
+        ItemSlot aux = new ItemSlot();
+        switch (itemSlot)
+        {
+            case "Hood":
+                aux = ItemSlot.Hood;
+                break;
+            case "Face":
+                aux = ItemSlot.Face;
+                break;
+            case "Chest":
+                aux = ItemSlot.Chest;
+                break;
+            case "Leg":
+                aux = ItemSlot.Leg;
+                break;
+            default:
+                break;
+        }
+
+        foreach (Item item in itemList)
+        {
+            if (item.type == aux)
+            {
+                returnList.Add(item);
+            }
+        }
+        return returnList;
     }
     public bool Pay(int amount)
     {
-        if (amount <= gold)
+        if (amount <= Gold)
         {
             gold -= amount;
             return true;

@@ -11,13 +11,22 @@ public class Shop : MonoBehaviour
     public OnShopUpdate shopUpdate;
 
     private bool isInside;
+    private List<Item> showedItems;
 
+    public List<Item> ShowedItems
+    {
+        get
+        {
+            return showedItems;
+        }
+    }
     private void Start()
     {
         foreach (Item item in itemsOnSale)
         {
             item.Equiped = false;
         }
+        FilterList("All");
     }
     // Update is called once per frame
     void Update()
@@ -55,7 +64,8 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Interacted");
         shop.SetActive(toggle);
-        ShopUI.instance.shopOpen = toggle;
+        InputManager.shopOpened = toggle;
+        //ShopUI.instance.shopOpen = toggle;
         Inventory.instance.ToggleInventory(toggle);
     }
     public void Buy(Item item)
@@ -63,7 +73,7 @@ public class Shop : MonoBehaviour
         if (Inventory.instance.Pay(item.cost))
         {
             Inventory.instance.AddItem(item);
-            itemsOnSale.Remove(item);
+            //itemsOnSale.Remove(item);
             shopUpdate.Invoke();
         }
     }
@@ -71,14 +81,57 @@ public class Shop : MonoBehaviour
     {
         if (!item.Equiped)
         {
-        Inventory.instance.RemoveItem(item);
-        itemsOnSale.Add(item);
         Inventory.instance.GetPayed(item.cost);
+        Inventory.instance.RemoveItem(item);
+        //itemsOnSale.Add(item);
         shopUpdate.Invoke();
         }
         else
         {
             Debug.Log("Item equiped");
         }
+    }
+    public void FilterList(string itemSlot)
+    {
+        if (itemSlot == "All")
+        {
+            showedItems = itemsOnSale;
+        }
+        else
+        {
+            showedItems = Filter(itemSlot);
+        }
+        shopUpdate.Invoke();
+    }
+    private List<Item> Filter(string itemSlot)
+    {
+        List<Item> returnList = new List<Item>();
+        ItemSlot aux = new ItemSlot();
+        switch (itemSlot)
+        {
+            case "Hood":
+                aux = ItemSlot.Hood;
+                break;
+            case "Face":
+                aux = ItemSlot.Face;
+                break;
+            case "Chest":
+                aux = ItemSlot.Chest;
+                break;
+            case "Leg":
+                aux = ItemSlot.Leg;
+                break;
+            default:
+                break;
+        }
+
+        foreach (Item item in itemsOnSale)
+        {
+            if (item.type == aux)
+            {
+                returnList.Add(item);
+            }
+        }
+        return returnList;
     }
 }

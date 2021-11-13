@@ -13,7 +13,6 @@ public class ShopUI : MonoBehaviour
     #endregion
     public Transform itemParents;
     public Shop interactShop;
-    public bool shopOpen;
 
     private InventorySlot[] slots;
     // Start is called before the first frame update
@@ -21,6 +20,7 @@ public class ShopUI : MonoBehaviour
     {
         gameObject.SetActive(false);
         slots = itemParents.GetComponentsInChildren<InventorySlot>();
+        InputManager.shopOpened = false;
     }
     public void SetUpShop()
     {
@@ -33,9 +33,9 @@ public class ShopUI : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (i < interactShop.itemsOnSale.Count)
+            if (i < interactShop.ShowedItems.Count)
             {
-                slots[i].AddItem(interactShop.itemsOnSale[i]);
+                slots[i].AddItem(interactShop.ShowedItems[i]);
             }
             else
             {

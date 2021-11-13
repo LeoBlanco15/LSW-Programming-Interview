@@ -20,13 +20,16 @@ public class Item : ScriptableObject
             this.equiped = value;
         }
     }
+
     public virtual void Use()
     {
-        Debug.Log("Using item");
-        if (ShopUI.instance.shopOpen)
+        if (InputManager.shopOpened)
             ShopUI.instance.interactShop.Sell(this);
         else
+        {
+            Debug.Log("Using item");
             MainCharacterChothes.instance.ChangeItem(this);
+        }
     }
 }
 public enum ItemSlot
@@ -35,4 +38,5 @@ public enum ItemSlot
     Face,
     Chest,
     Leg,
+    All,
 }

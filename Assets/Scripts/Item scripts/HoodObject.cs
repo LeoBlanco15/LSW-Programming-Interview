@@ -6,7 +6,7 @@ using UnityEngine;
 public class HoodObject : Item
 {
     public Sprite hood;
-    public static HoodObject CreateHood(Hood sprite, int cost)
+    public static HoodObject CreateItem(Hood sprite, int cost)
     {
         HoodObject auxHood = ScriptableObject.CreateInstance<HoodObject>();
         auxHood.cost = cost;
@@ -14,6 +14,17 @@ public class HoodObject : Item
         auxHood.logo = sprite.sprite.sprite;
         auxHood.type = ItemSlot.Hood;
         auxHood.Equiped = true;
+        return auxHood;
+    }
+    public static HoodObject CreateItem(HoodObject item)
+    {
+        HoodObject auxHood = ScriptableObject.CreateInstance<HoodObject>();
+
+        auxHood.cost = item.cost;
+        auxHood.hood = item.hood;
+        auxHood.logo = item.logo;
+        auxHood.type = ItemSlot.Hood;
+        
         return auxHood;
     }
 }

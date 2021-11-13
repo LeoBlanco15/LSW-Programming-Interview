@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
     public Transform itemParents;
+    public Text goldText;
 
     private Inventory inventory;
     private InventorySlot[] slots;
@@ -14,6 +16,7 @@ public class InventoryUI : MonoBehaviour
     {
         inventory = Inventory.instance;
         inventory.inventoryChange += UpdateUI;
+        inventory.inventoryChange += UpdateGold;
         
     }
     private void OnEnable()
@@ -22,9 +25,9 @@ public class InventoryUI : MonoBehaviour
         
         
     }
-    public void UpdateShop()
+    public void UpdateGold()
     {
-        
+        goldText.text = inventory.Gold.ToString();
     }
 
     public void UpdateUI()
@@ -32,9 +35,9 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             Debug.Log("Entre");
-            if (i < inventory.itemList.Count)
+            if (i < inventory.ShowedItems.Count)
             {
-                slots[i].AddItem(inventory.itemList[i]);
+                slots[i].AddItem(inventory.ShowedItems[i]);
                 Debug.Log("se agrega item");
             }
             else
