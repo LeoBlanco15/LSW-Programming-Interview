@@ -35,7 +35,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             Debug.Log("Entre");
-            if (i < inventory.ShowedItems.Count)
+            if (inventory.ShowedItems != null && i < inventory.ShowedItems.Count)
             {
                 slots[i].AddItem(inventory.ShowedItems[i]);
                 Debug.Log("se agrega item");

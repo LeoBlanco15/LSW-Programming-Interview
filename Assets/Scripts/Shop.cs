@@ -74,7 +74,8 @@ public class Shop : MonoBehaviour
         {
             Inventory.instance.AddItem(item);
             //itemsOnSale.Remove(item);
-            shopUpdate.Invoke();
+            if (shopUpdate != null)
+                shopUpdate.Invoke();
         }
     }
     public void Sell(Item item)
@@ -83,8 +84,9 @@ public class Shop : MonoBehaviour
         {
         Inventory.instance.GetPayed(item.cost);
         Inventory.instance.RemoveItem(item);
-        //itemsOnSale.Add(item);
-        shopUpdate.Invoke();
+            //itemsOnSale.Add(item);
+            if (shopUpdate != null)
+                shopUpdate.Invoke();
         }
         else
         {
@@ -101,7 +103,8 @@ public class Shop : MonoBehaviour
         {
             showedItems = Filter(itemSlot);
         }
-        shopUpdate.Invoke();
+        if(shopUpdate != null)
+            shopUpdate.Invoke();
     }
     private List<Item> Filter(string itemSlot)
     {
